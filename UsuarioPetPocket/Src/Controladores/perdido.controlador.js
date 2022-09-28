@@ -29,7 +29,7 @@ perdidoCtl.lista = async (req, res) => {
 perdidoCtl.traer = async (req, res) => {
     const ids = req.params.id
     const lista = await sql.query('select * from perdidos where idPerdido = ?', [ids])
-    res.render('perdido/editar', { lista })
+    res.render('perdidos/editar', { lista })
 }
 
 perdidoCtl.actualizar = async (req, res) => {
