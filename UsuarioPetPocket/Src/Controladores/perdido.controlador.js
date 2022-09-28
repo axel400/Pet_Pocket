@@ -33,7 +33,7 @@ perdidoCtl.traer = async (req, res) => {
 }
 
 perdidoCtl.actualizar = async (req, res) => {
-    const id = req.user.idUsuario
+    //const id = req.user.idUsuario
     const ids = req.params.id
     const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
     const nuevoPerdido = {
@@ -46,7 +46,7 @@ perdidoCtl.actualizar = async (req, res) => {
         .then(actualizar => {
             actualizar.update(nuevoPerdido)
             req.flash('success', 'Actuaizado con exito')
-            res.redirect('perdidos/lista/' + id);
+            res.redirect('perdidos/lista/' /*+ id*/);
         })
 }
 
@@ -56,7 +56,7 @@ perdidoCtl.eliminar = async (req, res) => {
     await orm.perdido.destroy({ where: { idPerdido: ids } })
         .then(() => {
             req.flash('success', 'Actuaizado con exito')
-            res.redirect('perdidos/lista/' + id);
+            res.redirect('perdidos/lista/' /*+ id*/);
         })
 }
 
