@@ -3,13 +3,12 @@ const perdidoCtl = {}
 const orm = require('../Base de datos/BaseDatos.orm')
 const sql = require('../Base de datos/BaseDatos.sql')
 
-
 perdidoCtl.mostrar = (req, res) => {
     res.render('perdidos/agregar');
 }
 
 perdidoCtl.mandar = async (req, res) => {
-    //const id = req.user.idUsuario
+    const id = req.user.idUsuario
     const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
     const nuevoPerdido = {
         ImagenPerdido,
@@ -19,7 +18,7 @@ perdidoCtl.mandar = async (req, res) => {
     }
     await orm.perdido.create(nuevoPerdido)
     req.flash('success', 'Guardado con exito')
-    res.redirect('/perdido/lista/');
+    res.redirect('/perdido/lista/' + id);
 }
 
 perdidoCtl.lista = async (req, res) => {
@@ -30,7 +29,7 @@ perdidoCtl.lista = async (req, res) => {
 perdidoCtl.traer = async (req, res) => {
     const ids = req.params.id
     const lista = await sql.query('select * from perdidos where idPerdido = ?', [ids])
-    res.render('perdidos/editar', { lista })
+    res.render('perdido/editar', { lista })
 }
 
 perdidoCtl.actualizar = async (req, res) => {
@@ -56,7 +55,7 @@ perdidoCtl.eliminar = async (req, res) => {
     const id = req.user.idUsuario
     await orm.perdido.destroy({ where: { idPerdido: ids } })
         .then(() => {
-            req.flash('success', 'Eliminado con exito')
+            req.flash('success', 'Actuaizado con exito')
             res.redirect('perdidos/lista/' + id);
         })
 }
