@@ -8,10 +8,10 @@ registro.mostrarRegistro = async(req, res) => {
 };
 
 registro.Registro = passport.authenticate('local.signup', {
-    successRedirect: '/CerrarSecion',
-    failureRedirect: '/Registro',
+    successRedirect: '/loguot',
+    failureRedirect: '/registro',
     failureFlash: true
-});
+})
 
 registro.mostrarLogin = (req, res, next) => {
     res.render('login/login');

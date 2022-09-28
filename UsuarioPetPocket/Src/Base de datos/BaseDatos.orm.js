@@ -21,6 +21,9 @@ const proyectoModelo = require('../Modelos/proyecto')
 const campañasModelo = require('../Modelos/campaña')
 const perdidoModelo = require('../Modelos/perdidos')
 
+
+
+
 const sequelize = new Sequelize(
   'PetPocket',
   'root',
@@ -56,6 +59,8 @@ sequelize.sync({ force: false })
 //campaña//
   const campañas = campañasModelo(sequelize, Sequelize)
   const perdido = perdidoModelo(sequelize, Sequelize)
+
+  
 
   usuario.hasMany(proyecto)
   proyecto.belongsTo(usuario)

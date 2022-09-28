@@ -68,7 +68,7 @@ app.use(require('./Rutas/principal.rutas'));
 app.use(require('./Rutas/mensaje.rutas'));
 
 //perdidos
-app.use(require ('./Rutas/perdido.rutas'))
+app.use("/perdido",require ('./Rutas/perdido.rutas'))
 
 
 

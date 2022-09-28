@@ -1,39 +1,28 @@
+<LINK REL=StyleSheet HREF="/css/login/registro.css" TYPE="text/css" MEDIA=screen>
+<form action="/registro" ref='uploadForm' method='post' encType="multipart/form-data">
+  <div id="contenedor">
+    <div id="titulo">
+      <p>Registra tu Usuario y Contraseña</p>
+    </div>
+    <div id="idDueñoTienda">
+      {{#each maximo}}
+      <input type="text" name="idUsuarios" id="numero" value="{{maximo}}" readonly>
+      {{/each}}
+    </div>
+    
+    <div id="datos">
+      <input type="text" id="Nombre" name="username" placeholder="Usuario:" required>
+    </div>
+    <div id="contraseñas">
+      <input type="password" id="Contraseña" name="password" placeholder="Contraseña:" required>
+    </div>
+    <div id="guardar">
+      <div id="boton">
+        <button type="submit">Guardar</button>
+      </div>
+    </div>
+  </div>
+</form>
 
- 
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
- 
-  <link rel="stylesheet" href="" />
- 
-<body>
-   <div class="container">
-     <div class="login-container">
-       <div class="register">
-        {{#each maximo}}
-         <h2>Registrarse <input type="text" name="idUsuarios" id="numero" value="{{maximo}}" readonly/h2>
-        {{/each}}
-
-         <form action="/registro" method="POST"
-         enctype="multipart/form-data">
-         
-            <input type="text" id="Nombre" name="username" placeholder="Usuario:" class="nombre">
-            <input type="password" id="Contraseña" name="password" placeholder="Contraseña:" class="password">
-               <br>
-<div id="imagen">
-            <label>Foto Usuario</label>
-            <div id="cambioImagen">
-                <img src="/img/user/NoImagen.jpg" id="imagenPrevisualizacion">
-            </div>
-            <input type="file" name="imagenUsuario" id="seleccionArchivos" accept="image/*" required>
-        </div>
-           <input type="submit" class="submit" value="Registrarse">
-                          <br>
-           <h8>¿ya tienes cuenta? <a href="http://localhost:4000/login">inicia sesion</a></h8>
-         </form>
-       </div>
-       
-     </div>
-   </div>
-</body>
 <script src="/js/numero.js"></script>
 <script src="/js/previsualizacion.js"></script>
-</html>

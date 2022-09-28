@@ -48,6 +48,7 @@ passport.use(
     async (req, username, password, done) => {
       const usuarios = await orm.usuario.findOne({ where: { username: username } });
       if (usuarios === null) {
+        console.log("Hola")
         const {idUsuarios}= req.body
         let nuevoUsuario = {
           username,
@@ -56,31 +57,10 @@ passport.use(
         nuevoUsuario.password = await helpers.encryptPassword(password);
         const resultado = await orm.usuario.create(nuevoUsuario);
         nuevoUsuario.id = resultado.insertId;
+       
+
+        
         return done(null, nuevoUsuario);
-
-        const imagenUsuario = req.files.imagenUsuario
-        const validacion = path.extname(imagenUsuario.name)
-
-        const extencion = [".PNG", ".JPG", ".JPEG", ".GIF", ".TIF", ".png", ".jpg", ".jpeg", ".gif", ".tif"];
-
-        if (!extencion.includes(validacion)) {
-          req.flash("success", "Imagen no compatible.")
-        }
-
-        if (!req.files) {
-          req.flash("success", "Imagen no insertada.")
-        }
-
-        const ubicacion = __dirname + "/../public/multimedia/user/" + imagenUsuario.name;
-
-        imagenUsuario.mv(ubicacion, function (err) {
-          if (err) {
-            return req.flash("message", err)
-          }
-          sql.query("UPDATE usuarios SET imagesUser = ? WHERE idUsuarios = ?", [imagenUsuario.name, idUsuarios])
-          console.log("Imagen de usuario ingresada")
-        })
-
       } else {
         if (usuarios) {
           const usuario = usuarios

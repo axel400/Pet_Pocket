@@ -9,7 +9,7 @@ perdidoCtl.mostrar = (req, res) => {
 }
 
 perdidoCtl.mandar = async (req, res) => {
-    const id = req.user.idPerdido
+    //const id = req.user.idUsuario
     const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
     const nuevoPerdido = {
         ImagenPerdido,
@@ -19,7 +19,7 @@ perdidoCtl.mandar = async (req, res) => {
     }
     await orm.perdido.create(nuevoPerdido)
     req.flash('success', 'Guardado con exito')
-    res.redirect('/perdidos/lista/' + id);
+    res.redirect('/perdido/lista/');
 }
 
 perdidoCtl.lista = async (req, res) => {
@@ -34,7 +34,7 @@ perdidoCtl.traer = async (req, res) => {
 }
 
 perdidoCtl.actualizar = async (req, res) => {
-    const id = req.user.idPerdido
+    const id = req.user.idUsuario
     const ids = req.params.id
     const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
     const nuevoPerdido = {
@@ -53,10 +53,10 @@ perdidoCtl.actualizar = async (req, res) => {
 
 perdidoCtl.eliminar = async (req, res) => {
     const ids = req.params.id
-    const id = req.user.idPerdido
+    const id = req.user.idUsuario
     await orm.perdido.destroy({ where: { idPerdido: ids } })
         .then(() => {
-            req.flash('success', 'Actuaizado con exito')
+            req.flash('success', 'Eliminado con exito')
             res.redirect('perdidos/lista/' + id);
         })
 }
