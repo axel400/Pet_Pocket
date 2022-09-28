@@ -19,6 +19,7 @@ const proyectoModelo = require('../Modelos/proyecto')
 
 //campaña//
 const campañasModelo = require('../Modelos/campaña')
+const perdidoModelo = require('../Modelos/perdidos')
 
 const sequelize = new Sequelize(
   'PetPocket',
@@ -54,15 +55,18 @@ sequelize.sync({ force: false })
 
 //campaña//
   const campañas = campañasModelo(sequelize, Sequelize)
+  const perdido = perdidoModelo(sequelize, Sequelize)
 
   usuario.hasMany(proyecto)
   proyecto.belongsTo(usuario)
 
   campañas.hasMany(proyecto)
   proyecto.belongsTo(campañas)
+  perdido.belongsTo(perdido)
 
 module.exports = {
     usuario,
     proyecto,
-    campañas
+    campañas,
+    perdido
 }
