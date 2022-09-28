@@ -1,30 +1,64 @@
-const registro = {};
+const perdidoCtl = {}
 
-const passport = require('passport');
+const orm = require('../Base de datos/BaseDatos.orm')
+const sql = require('../Base de datos/BaseDatos.sql')
 
-registro.mostrarRegistro = async(req, res) => {
-    res.render('login/registro');
-};
+perdidoCtl.mostrar = (req, res) => {
+    res.render('vistas/perdidos/agregar');
+}
 
-registro.Registro = passport.authenticate('local.signup', {
-    successRedirect: '/CerrarSecion',
-    failureRedirect: '/Registro',
-    failureFlash: true
-});
+perdidoCtl.mandar = async (req, res) => {
+    const id = req.user.idUsuarios
+    const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
+    const nuevoPerdido = {
+        ImagenPerdido,
+        FechaPerdido,
+        DescripcionPerdido,
+        TelefonoPerdido,
+        detalleRolUsuarioIdDetalleRolUsuario: id
+    }
+    await orm.perdido.create(nuevoPerdido)
+    req.flash('success', 'Guardado con exito')
+    res.redirect('/perdidos/lista/' + id);
+}
 
-registro.mostrarLogin = (req, res, next) => {
-    res.render('login/login');
-};
+perdidoCtl.lista = async (req, res) => {
+    const lista = await sql.query('select * from perdidos')
+    res.render('vistas/perdidos/lista', { lista })
+}
 
-registro.Login = passport.authenticate('local.signin', {
-    successRedirect: '/inicio',
-    failureRedirect: '/',
-    failureFlash: true
-}); 
+perdidoCtl.traer = async (req, res) => {
+    const ids = req.params.id
+    const lista = await sql.query('select * from perdidos where idPerdido = ?', [ids])
+    res.render('vistas/perdidos/editar', { lista })
+}
 
-registro.cierreSesion = (req, res, next) => {
-    req.logOut();
-    res.redirect('/');
-};
+perdidoCtl.actualizar = async (req, res) => {
+    const id = req.user.idPerdido
+    const ids = req.params.id
+    const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
+    const nuevoPerdido = {
+        ImagenPerdido,
+        FechaPerdido,
+        DescripcionPerdido,
+        TelefonoPerdido
+    }
+    await orm.perdido.findOne({ where: { idPerdido: ids } })
+        .then(actualizar => {
+            actualizar.update(nuevoPerdido)
+            req.flash('success', 'Actuaizado con exito')
+            res.redirect('/perdidos/lista/' + id);
+        })
+}
 
-module.exports = registro;
+perdidoCtl.eliminar = async (req, res) => {
+    const ids = req.params.id
+    const id = req.user.idPerdido
+    await orm.perdido.destroy({ where: { idPerdido: ids } })
+        .then(() => {
+            req.flash('success', 'Actuaizado con exito')
+            res.redirect('/perdidos/lista/' + id);
+        })
+}
+
+module.exports = perdidoCtl

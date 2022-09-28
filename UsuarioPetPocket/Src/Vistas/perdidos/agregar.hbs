@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="">
+<div id="foto">
+    <img src="">
+</div>
+<div id="contenedor">
+    <form action="/perdido/agregar/{{user.idPerdido}}" method="post">
+    <div id="titulo">
+        <p>Agregar mascota</p>
+    </div>
+    <div id="ImagenPerdido">
+        <label>Imagen Perdido:</label>
+        <input type="text" name="ImagenPerdido" required>
+    </div>
+    <div id="FechaPerdido">
+        <label>Fecha Perdido:</label>
+        <input type="text" name="FechaPerdido" required> 
+               <select name="Fecha">
+                    <option>Hace 1 día</option>
+                    <option>Hace 2 día</option>
+                    <option>Hace 1 semana</option>
+                    <option>Hace 1-2 semana</option>
+                    <option>Más de un mes</option>
+                </select>
+    </div>
+    <div id="DescripcionPerdido">
+        <label>Descripcion Perdido:</label>
+        <input type="text" name="DescripcionPerdido" required>
+    </div>
+    <div id="TelefonoPerdido">
+        <label>Telefono Perdido:</label>
+        <input type="text" name="TelefonoPerdido" required>
+    </div>
+    <div id="boton">
+        <button type="submit">SUBIR</button>
+    </div>
+    </form>
+</div>
