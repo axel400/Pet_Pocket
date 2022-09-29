@@ -8,7 +8,7 @@ perdidoCtl.mostrar = (req, res) => {
 }
 
 perdidoCtl.mandar = async (req, res) => {
-    const id = req.user.idUsuario
+    //const id = req.user.idUsuario
     const { ImagenPerdido, FechaPerdido, DescripcionPerdido, TelefonoPerdido } = req.body
     const nuevoPerdido = {
         ImagenPerdido,

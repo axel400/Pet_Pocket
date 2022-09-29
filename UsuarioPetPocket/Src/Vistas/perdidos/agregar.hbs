@@ -1,38 +1,126 @@
-<link rel="stylesheet" href="">
-<div id="foto">
-    <img src="">
-</div>
-<div id="contenedor">
-    <form action="/perdido/agregar/{{user.idUsuarios}}" method="post">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <LINK REL=StyleSheet HREF="/css/perdidos/agregar.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="/css/paginaPrincipalCompleta.css" />
+    <title>PERDIDOS</title>
+
+</head>
+
+
+<body
+    background="https://static.vecteezy.com/system/resources/previews/002/705/240/large_2x/background-of-dog-paw-prints-vector.jpg">
+    <header>
+        <nav class="nav">
+
+            <!--Aqui va el nombre-->
+            <img class="logo" src="/multimedia/logo-removebg-preview.png">
+            <!--Aqui se acaba-->
+
+            <ul class="menu">
+
+                <!--Aqui va las opciones para la barra de busqueda
+                <li><a href="http://localhost:4000/registro_carnet">Agregar carnet</a></li>
+Es un ejemplo para llamar a lo que deseen
+                -->
+                <li><a href="#">Red social</a></li>
+                <li><a href="#">Perdidos</a></li>
+                <li><a href="#">Adopcion</a></li>
+                <li><a href="http://localhost:4000/campañas">Campañas</a></li>
+                <li><a href="#">Reporte</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Donaciones</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="http://localhost:4000/login">cerrar sesion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--Aqui se acaba el nav-->
     <div id="titulo">
-        <p>Agregar mascota</p>
+        <p>Mascotas perdidas</p>
     </div>
-    
-    <div id="ImagenPerdido">
-        <label>Imagen Perdido:</label>
-        <input type="text" name="ImagenPerdido" required>
-    </div>
-    <div id="FechaPerdido">
-        <label>Fecha Perdido:</label>
-        {{!-- <input type="text" name="FechaPerdido" required>  --}}
-               <select name="Fecha">
+    <div>
+        <form action="/perdido/agregar/{{user.idUsuarios}}" method="post" class="contenedor">
+
+            <div class="stitulo">
+                <p> <strong>AYUDANOS A <BR> ENCONTRARLO</strong></p>
+            </div>
+
+            <div id="ImagenPerdido">
+                <label class="subtitulo">Imagen Perdido:</label>
+                <input type="text" name="ImagenPerdido" required placeholder="Imagen perdido">
+            </div>
+            <div id="FechaPerdido">
+                <label class="subtitulo">Tiempo Perdido:</label>
+                {{!-- <input type="text" name="FechaPerdido" required> --}}
+                <select name="Fecha">
                     <option>Hace 1 día</option>
                     <option>Hace 2 día</option>
                     <option>Hace 1 semana</option>
                     <option>Hace 1-2 semana</option>
                     <option>Más de un mes</option>
                 </select>
+            </div>
+            <div id="DescripcionPerdido">
+                <label class="subtitulo">Descripcion perdido:</label>
+                <input type="text" name="DescripcionPerdido" required placeholder="Descripción Perdido">
+            </div>
+            <div id="TelefonoPerdido">
+                <label class="subtitulo">Teléfono perdido:</label>
+                <input type="text" name="TelefonoPerdido" required placeholder="Teléfono Perdido">
+            </div>
+            <div id="boton">
+                <button type="submit">SUBIR</button>
+            </div>
+        </form>
     </div>
-    <div id="DescripcionPerdido">
-        <label>Descripcion Perdido:</label>
-        <input type="text" name="DescripcionPerdido" required>
-    </div>
-    <div id="TelefonoPerdido">
-        <label>Telefono Perdido:</label>
-        <input type="text" name="TelefonoPerdido" required>
-    </div>
-    <div id="boton">
-        <button type="submit">SUBIR</button>
-    </div>
-    </form>
-</div>
+    <br><br>
+
+    <!--Aqui empieza el foter-->
+    <footer id="pie">
+        <h4>Siguenos en nuestras redes </h4>
+        <aside id="barra">
+            <input type="text" placeholder="petPocket@yavirac.ec">
+            <input type="button" value="subscribe">
+
+        </aside>
+        <table class="default" id="tabla">
+            <tr>
+                <th colspan="2"><a href="#">
+                        <li class="nav-item">Tienda</li>
+                    </a></th>
+                <th colspan="2"><a href="#">
+                        <li class="nav-item">Adopcion</li>
+                    </a></th>
+            </tr>
+            <tr>
+                <th colspan="2"><a href="#">
+                        <li class="nav-item">Ajustes</li>
+                    </a></th>
+                <th colspan="2"><a href="#">
+                        <li class="nav-item">Busqueda</li>
+                    </a></th>
+            </tr>
+            <a href="http://twitter.com/AQUI_TU_USUARIO" target="_blank"><img
+                    src="https://lh6.googleusercontent.com/--aIk2uBwEKM/T3nN1x09jBI/AAAAAAAAAs8/qzDsbw3kEm8/s32/twitter32.png"
+                    width=32 height=32 alt="Síguenos en Twitter" /></a>
+            <a rel="author" href="https://plus.google.com/TU_ID_GOOGLE?rel=author" target="_blank"><img
+                    alt="Siguenos en Google+"
+                    src="https://lh5.googleusercontent.com/-F_FBKktZWZk/T3nN0v4FeAI/AAAAAAAAAsc/7dHTxkxn4cI/s32/google32.png"
+                    width=32 height=32 /></a>
+            <a href="http://www.facebook.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Facebook"
+                    src="https://lh6.googleusercontent.com/-CYt37hfDnQ8/T3nNydojf_I/AAAAAAAAAr0/P5OtlZxV4rk/s32/facebook32.png"
+                    width=32 height=32 /></a>
+        </table>
+
+    </footer>
+
+
+</body>
+
+</html>

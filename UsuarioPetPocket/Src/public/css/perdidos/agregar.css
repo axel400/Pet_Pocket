@@ -1,0 +1,54 @@
+/*Aqui se acaba*/
+ #titulo{
+    font-size: 40px;
+    font-family: cursive;
+    margin-top: 40px;
+    margin-left: 540px;
+ }
+ .contenedor{
+    background-color: #ffcb42;
+    width: 400px;
+    height: 420px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 25px;
+    border: solid 3px #277bc0;
+ }
+ .stitulo{
+    font-size: 20px;
+    font-family: cursive;
+ }
+
+ input{
+    background-color: #277bc0;
+    border: solid 1px rgb(31, 28, 28);
+    padding: 3px;
+    width: 220px;
+    color: #fff;
+    margin-top: 1px;
+    border-radius: 20px;
+ }
+ select{
+    background-color: #277bc0;
+    border: solid 1px rgb(31, 28, 28);
+    padding: 5px;
+    width: 220px;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 20px;
+ }
+ button{
+    background-color: #277bc0;
+    border: solid 1px rgb(31, 28, 28);
+    padding: 2px;
+    width: 130px;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 20px;
+ }
+ label{
+    color: #fff;
+    font-family: cursive;
+    display: block;
+    margin: 10px;
+ }
