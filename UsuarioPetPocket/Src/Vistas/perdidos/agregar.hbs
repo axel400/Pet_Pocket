@@ -45,18 +45,18 @@ Es un ejemplo para llamar a lo que deseen
         <p>Mascotas perdidas</p>
     </div>
     <div>
-        <form action="/perdido/agregar/{{user.idUsuarios}}" method="post" class="contenedor">
+        <form action="/perdido/agregar/{{user.idUsuarios}}" method="post" id="contenedor">
 
-            <div class="stitulo">
+            <div id="stitulo">
                 <p> <strong>AYUDANOS A <BR> ENCONTRARLO</strong></p>
             </div>
 
             <div id="ImagenPerdido">
-                <label class="subtitulo">Imagen Perdido:</label>
+                <label id="subtitulo">Imagen Perdido:</label>
                 <input type="text" name="ImagenPerdido" required placeholder="Imagen perdido">
             </div>
             <div id="FechaPerdido">
-                <label class="subtitulo">Tiempo Perdido:</label>
+                <label id="subtitulo">Tiempo Perdido:</label>
                 {{!-- <input type="text" name="FechaPerdido" required> --}}
                 <select name="Fecha">
                     <option>Hace 1 día</option>
@@ -67,11 +67,11 @@ Es un ejemplo para llamar a lo que deseen
                 </select>
             </div>
             <div id="DescripcionPerdido">
-                <label class="subtitulo">Descripcion perdido:</label>
+                <label id="subtitulo">Descripcion perdido:</label>
                 <input type="text" name="DescripcionPerdido" required placeholder="Descripción Perdido">
             </div>
             <div id="TelefonoPerdido">
-                <label class="subtitulo">Teléfono perdido:</label>
+                <label id="subtitulo">Teléfono perdido:</label>
                 <input type="text" name="TelefonoPerdido" required placeholder="Teléfono Perdido">
             </div>
             <div id="boton">

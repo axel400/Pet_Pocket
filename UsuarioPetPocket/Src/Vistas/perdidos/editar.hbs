@@ -34,15 +34,15 @@ Es un ejemplo para llamar a lo que deseen
     <div id="contenedor">
         {{#each lista}}
         <form action="/perdido/editar/{{idPerdido}}" method="post" class="contenedor">
-            <div class="stitulo">
+            <div id="stitulo">
                 <p> <strong>AYUDANOS A <BR> ENCONTRARLO</strong></p>
             </div>
             <div id="ImagenPerdido">
-                <label class="subtitulo">Imagen Perdido:</label>
+                <label id="subtitulo">Imagen Perdido:</label>
                 <input type="text" name="ImagenPerdido" value="{{ImagenPerdido}}" required>
             </div>
             <div id="FechaPerdido">
-                <label class="subtitulo">Fecha Perdido:</label>
+                <label id="subtitulo">Fecha Perdido:</label>
                 {{!-- <input type="text" name="FechaPerdido" value="{{FechaPerdido}}" required> --}}
                 <select name="Fecha" value="{{FechaPerdido}}" required>
                     <option>Hace 1 día</option>
@@ -53,11 +53,11 @@ Es un ejemplo para llamar a lo que deseen
                 </select>
             </div>
             <div id="DescripcionPerdido">
-                <label class="subtitulo">Descripcion Perdido:</label>
+                <label id="subtitulo">Descripcion Perdido:</label>
                 <input type="text" name="DescripcionPerdido" value="{{DescripcionPerdido}}" required>
             </div>
             <div id="TelefonoPerdido">
-                <label class="subtitulo">Telefono Perdido:</label>
+                <label id="subtitulo">Telefono Perdido:</label>
                 <input type="text" name="TelefonoPerdido" value="{{TelefonoPerdido}}" required>
             </div>
             <div id="boton">
