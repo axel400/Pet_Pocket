@@ -37,12 +37,12 @@ Es un ejemplo para llamar a lo que deseen
     <div id="stitulo">
             <p> <strong>AYUDANOS A <BR> ENCONTRARLO</strong></p>
         </div>
-    <div class="row">
+    <div>
         {{#each lista}}
         <div class="tarjeta">
-            <div id="idPerdido">
+            {{!-- <div id="idPerdido">
                 <p>{{ImagenPerdido}}</p>
-            </div>
+            </div> --}}
             <div id="imagen">
                 <p>{{ImagenPerdido}}</p>
             </div>
@@ -55,12 +55,12 @@ Es un ejemplo para llamar a lo que deseen
             <div id="telefono">
                 <p>{{TelefonoPerdido}}</p>
             </div>
-            <div id="boton">
+            <div>
                 <div id="editar">
-                    <a href="/perdido/editar/{{idPerdido}}"><button type="button">Editar</button></a>
+                    <a href="/perdido/editar/{{idPerdido}}"><button type="button" id="b1">EDITAR</button></a>
                 </div>
                 <div id="eliminar">
-                    <a href="/perdido/eliminar/{{idPerdido}}"><button type="button">Eliminar</button></a>
+                    <a href="/perdido/eliminar/{{idPerdido}}"><button type="button" id="b2">ELIMINAR</button></a>
                 </div>
             </div>
         </div>

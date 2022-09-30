@@ -1,21 +1,37 @@
 #contenedor{
-    background-color: #277BC0;
-    width: 220px;
-    margin-left: 60px;
-    border: solid 3px #ffcb42;
-    display: inline-block;
-    text-align: center;
+    background-color: #ffcb42;
+    width: 260px;
+    margin-left: 500px;
+    border: solid 3px #277bc0;
     padding: 20px;
     margin-top: 60px;  
 }
 #stitulo{
-    font-size: 20px;
+    font-size: 30px;
     font-family: cursive;
     text-align: center;
  }
- button{
-    background-color: #ffcb42;
+#b1{
+    background-color: #277bc0;
     color: #fff;
     padding: 5px;
     border-radius: 20px;
+    border: solid 1px black;
+    margin-left: 80px;
+    margin-top: 10px;
+    display: inline-block;
+ }
+ #b2{
+    background-color: #277bc0;
+    color: #fff;
+    padding: 5px;
+    border-radius: 20px;
+    border: solid 1px black;
+     margin-left: 75px;
+    display: inline-block;
+    margin-top: 10px;
+ }
+ p{
+    font-size: 20px;
+    text-align: center;
  }
