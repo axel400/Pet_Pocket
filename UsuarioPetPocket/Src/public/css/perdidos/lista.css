@@ -1,13 +1,21 @@
-.contenedor{
+#contenedor{
     background-color: #277BC0;
     width: 220px;
     margin-left: 60px;
     border: solid 3px #ffcb42;
     display: inline-block;
     text-align: center;
+    padding: 20px;
+    margin-top: 60px;  
 }
-.stitulo{
+#stitulo{
     font-size: 20px;
     font-family: cursive;
     text-align: center;
+ }
+ button{
+    background-color: #ffcb42;
+    color: #fff;
+    padding: 5px;
+    border-radius: 20px;
  }

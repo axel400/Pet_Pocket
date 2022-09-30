@@ -52,7 +52,7 @@ perdidoCtl.actualizar = async (req, res) => {
 
 perdidoCtl.eliminar = async (req, res) => {
     const ids = req.params.id
-    const id = req.user.idUsuario
+    //const id = req.user.idUsuarios
     await orm.perdido.destroy({ where: { idPerdido: ids } })
         .then(() => {
             req.flash('success', 'Actuaizado con exito')
